@@ -1,0 +1,9 @@
+.questions {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+}

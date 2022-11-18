@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import Questions from '../components/Questions'
+import Header from '../components/Header/Header'
+import Questions from '../components/Questions/Questions'
 
 export default function Home() {
   const [quizStarted, setQuizStarted] = useState(false)
@@ -8,22 +9,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Trivia</title>
         <meta name="description" content="A Trivia Game" />
+        <title>Trivia</title>
       </Head>
-      <main>
-        <h1>Trivia</h1>
-        {quizStarted ? (
-          <button onClick={() => console.log('Get Results')}>
-            Get Results
-          </button>
-        ) : (
-          <button onClick={() => setQuizStarted(!quizStarted)}>
-            Start Quiz
-          </button>
-        )}
-        {quizStarted && <Questions />}
-      </main>
+      <Header quizStarted={quizStarted} setQuizStarted={setQuizStarted} />
+      <main>{quizStarted && <Questions />}</main>
     </>
   )
 }
